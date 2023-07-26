@@ -1,0 +1,22 @@
+.header-grid-system{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+
+.header-sec-one{
+    grid-column: span 6;
+}
+.header-sec-two{
+    grid-column: span 6;
+}
+
+.header-img-container{
+    width: 400px;
+    height: 400px;
+}
+
+.header-img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

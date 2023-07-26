@@ -1,0 +1,24 @@
+.nav-grid-system{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+.nav-links-container{
+    grid-column: 4/10;
+    display: flex;
+    justify-content: center;
+}
+.nav-link{
+    list-style: none;
+    display: grid;
+    margin-left: 2rem;
+}
+.nav-link a{
+    text-decoration: none;
+    align-self: center;
+    color: black;
+}
+
+.nav-link-logo{
+    margin-left: 0;
+    margin-right: 2rem;
+}
