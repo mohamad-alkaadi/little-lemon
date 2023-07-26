@@ -2,15 +2,20 @@
     display: grid;
     grid-template-columns: repeat(12,1fr);
 }
-.nav-links-container{
-    grid-column: 4/10;
+.nav-container{
+    grid-column: 3/11;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding-top: .2rem;
+}
+.nav-links-container{
+    display: flex;
+    justify-content: start;
 }
 .nav-link{
     list-style: none;
     display: grid;
-    margin-left: 2rem;
+    margin-left: 4rem;
 }
 .nav-link a{
     text-decoration: none;
@@ -21,4 +26,5 @@
 .nav-link-logo{
     margin-left: 0;
     margin-right: 2rem;
+    justify-self: flex-start;
 }

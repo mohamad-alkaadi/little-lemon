@@ -4,10 +4,10 @@
 }
 
 .header-sec-one{
-    grid-column: span 6;
+    grid-column: 3/7;
 }
 .header-sec-two{
-    grid-column: span 6;
+    grid-column: 7/11;
 }
 
 .header-img-container{
