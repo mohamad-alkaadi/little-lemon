@@ -7,16 +7,22 @@ import Footer from './Components/Home/Footer';
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
 import Menu from './Components/Menu/Menu';
-import Reservation from './Components/Reservation/Reservation';
+import Reservations from './Components/Reservations/Reservations';
+import Order from './Components/Order/Order';
+import Login from './Components/Login/Login';
 
 function App() {
   return (
     <>
         <Nav/>
-        <Home/>
-        <About/>
-        <Menu/>
-        <Reservation/>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/menu' element={<Menu/>}/>
+          <Route path='/reservations' element={<Reservations/>}/>
+          <Route path='/order' element={<Order/>}/>
+          <Route path='/login' element={<Login/>}/>
+        </Routes>
     </>
   );
 }
