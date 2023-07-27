@@ -1,6 +1,6 @@
 import React from 'react'
-import logo from './icons_assets/Logo.svg'
-import './Component-css/nav.css'
+import logo from './common-assets/Logo.svg'
+import './common-css/nav.css'
 const Nav = () => {
   return (
     <nav className='nav-grid-system'>
