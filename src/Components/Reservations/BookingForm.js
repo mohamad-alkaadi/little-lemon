@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 import './reservations-css/bookingForm.css'
+import { Link, useMatch, useResolvedPath, useHistory } from "react-router-dom"
 
+
+const handleSubmit = (e) => {
+    e.preventDefault()
+    history.push('/bookingConformed')
+}
 
 const BookingForm = (props) => {
     const [date, setDate] = useState('')
@@ -8,10 +14,13 @@ const BookingForm = (props) => {
     const [guests, setGuests] = useState(1)
     const [occasion, setOccasion] = useState('Birthday')
     
+    const history = useHistory()
+
+
 
   return (
     <>
-        <form className='booking-form'>
+        <form className='booking-form' onSubmit={handleSubmit}>
             <label htmlFor='res-date' data-test-id='bookNow'>Choose date</label>
             <input type='date' id='res-date' value={date} onChange={(e) => setDate(e.target.value)}/>
             <label htmlFor="res-time">Choose time</label>
@@ -34,5 +43,17 @@ const BookingForm = (props) => {
   )
 }
 
+
+function CustomLink({ to, children, ...props }) {
+    const resolvedPath = useResolvedPath(to)
+    const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+  
+    return (
+        <Link to={to} {...props}>
+          {children}
+        </Link>
+    )
+  }
+  
 export default BookingForm
 

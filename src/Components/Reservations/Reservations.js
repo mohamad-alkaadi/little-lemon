@@ -1,5 +1,5 @@
 
-import React, {useReducer, useState} from 'react'
+import React, {useEffect, useReducer, useState} from 'react'
 import BookingForm from './BookingForm'
 
 const CHANGE_DATE = 'change-date'
@@ -15,14 +15,44 @@ const updateTimes = (state,action) =>{
       return state
   }
 }
-const initializeTimes = () => { return [ '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', ] }
-const [availableTimes, dispatch] = useReducer(updateTimes, null, initializeTimes)
 
+// const{fData,setFData} = useState()
+
+// useEffect(() => {
+//   fetch('https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js')
+//   .then(res => {
+//     return res.json()
+//   })
+//   .then(data => {
+//     setFData(data)
+//   })
+// },[])
+
+
+const{fData,setFData} = useState(null)
+
+useEffect(() => { fetch('https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js') 
+.then(res => {
+  if (res.ok) {
+    return res.json() 
+  } else {
+    throw new Error(`Something went wrong: ${res.status}`) } }) 
+    .then(data => {
+      setFData(data) })
+      .catch(error => {
+        console.error(error) }) },[])
+
+
+const initializeTimes = () => { return fData }
+const [availableTimes, dispatch] = useReducer(updateTimes, null, initializeTimes)
+console.log(initializeTimes)
   return (
     <>
-      <BookingForm availableTimes={availableTimes} onDateChange={(date) => dispatch({type: CHANGE_DATE, date})}/>
+      {initializeTimes && <inBookingForm availableTimes={availableTimes} onDateChange={(date) => dispatch({type: CHANGE_DATE, date})}/>}
     </>
   )
 }
+
+
 
 export default Reservations
