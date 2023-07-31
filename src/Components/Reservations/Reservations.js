@@ -16,18 +16,6 @@ const updateTimes = (state,action) =>{
   }
 }
 
-// const{fData,setFData} = useState()
-
-// useEffect(() => {
-//   fetch('https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js')
-//   .then(res => {
-//     return res.json()
-//   })
-//   .then(data => {
-//     setFData(data)
-//   })
-// },[])
-
 
 const{fData,setFData} = useState(null)
 
