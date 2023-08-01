@@ -28,7 +28,6 @@ const Order = () => {
   }
   return (
     <>
-      {/* Order Online */}
       <button onClick={decrease}>-</button>
       <span>{state.count}</span>
       <button onClick={increase}>+</button>
